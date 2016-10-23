@@ -1,9 +1,9 @@
 package com.swagfish.tictactoe;
 
-public class Main
-{
-	public static void main(String[] args) 
-	{
-		// TODO
-	}
+import static spark.Spark.*;
+
+public class Main {
+    public static void main(String[] args) {
+        get("/hello", (req, res) -> "Hello World");
+    }
 }
