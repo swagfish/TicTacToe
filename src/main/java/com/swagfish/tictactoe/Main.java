@@ -14,13 +14,12 @@ public class Main implements SparkApplication
 
 		String port = System.getenv("PORT");
 		if (port != null) port(Integer.valueOf(port));
-		web.init();
-
-		
+		web.init();	
 	}
+
 	@Override
 	public void init()
 	{
-		get("/index.html", (req, res) -> "");
+		get("piss", (req, res) -> "piss");
 	}
 }
