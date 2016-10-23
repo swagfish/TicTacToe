@@ -1,3 +1,7 @@
 language: java
+
 jdk:
   - oraclejdk8
+
+notifications:
+  slack: teamswagfish:c3pl7bqeM6RAUxsOaIguND1f
