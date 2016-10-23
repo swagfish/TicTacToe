@@ -16,3 +16,7 @@ jar {
 		attributes("Main-Class": "com.swagfish.tictactoe.Main")
 	}
 }
+
+task stage {
+	dependsOn installDist
+}
