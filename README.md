@@ -6,4 +6,4 @@
 ## Develope
 [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develope)](https://travis-ci.org/swagfish/tictactoe)
 
-[Absolute README link](https://arcane-tundra-47758.herokuapp.com/)
+[TicTacToe](https://arcane-tundra-47758.herokuapp.com/)
