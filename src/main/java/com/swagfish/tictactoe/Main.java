@@ -20,6 +20,19 @@ public class Main implements SparkApplication
 	@Override
 	public void init()
 	{
-		get("piss", (req, res) -> "piss");
+		get("/gettest", (req, res) -> "gettest");
+
+		// TODO: use library to make JSon objects
+		post("/signin", (req, res) -> {
+		    return String.format("{username:%s, password:%s}", 
+		    	req.queryParams("username"), 
+		    	req.queryParams("password"));
+		});
+		post("/signup", (req, res) -> {
+			return String.format("{username:%s, password:%s, confirm_password:%s}", 
+				req.queryParams("username"), 
+				req.queryParams("password"), 
+				req.queryParams("confirm_password"));
+		});
 	}
 }
