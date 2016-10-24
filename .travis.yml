@@ -8,5 +8,6 @@ notifications:
 
 deploy:
   provider: heroku
+  api_key: apikey
   app: arcane-tundra-47758
   on: develope
