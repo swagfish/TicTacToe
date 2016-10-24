@@ -5,9 +5,3 @@ jdk:
 
 notifications:
   slack: teamswagfish:c3pl7bqeM6RAUxsOaIguND1f 
-
-deploy:
-  provider: heroku
-  api_key: apikey
-  app: arcane-tundra-47758
-  on: develope
