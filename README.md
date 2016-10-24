@@ -3,7 +3,7 @@
 ## Master
 [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/tictactoe)
 
-## Develope
+## Develop
 [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/tictactoe)
 
 ## Heroku Deployment
