@@ -1,9 +1,25 @@
 package com.swagfish.tictactoe;
 
-public class Main
+import static spark.Spark.*;
+import spark.*;
+import spark.servlet.SparkApplication;
+
+
+public class Main implements SparkApplication 
 {
 	public static void main(String[] args) 
 	{
-		// TODO
+		staticFileLocation("/public");
+		SparkApplication web  = new Main();
+
+		String port = System.getenv("PORT");
+		if (port != null) port(Integer.valueOf(port));
+		web.init();	
+	}
+
+	@Override
+	public void init()
+	{
+		get("piss", (req, res) -> "piss");
 	}
 }
