@@ -70,7 +70,6 @@ public class TicTacToeTest
 		assertEquals(-1, ttt.getNextToMove());
 	}
 
-
 	@Test
 	public void isOverTest1()
 	{
@@ -208,61 +207,55 @@ public class TicTacToeTest
 		assertEquals(true, ttt.isOver());
 	}
 
-
-
-
-	@Test
-	public void alternatingPlayersTest()
-	{
-		TicTacToe ttt = new TicTacToe();
-		ttt.add(1, 1);
-		assertEquals(-1, ttt.getNextToMove());
-	}
-
 	@Test 
-	public void mapUpdateTest1()
-	{
-		TicTacToe ttt = new TicTacToe();
-		ttt.add(1, 1);
-		assertEquals(1, ttt.getSymbol(1,1));
-	}
-	@Test 
-	public void mapUpdateTest2()
-	{
-		TicTacToe ttt = new TicTacToe();
-		ttt.add(1, 1);
-		ttt.add(0, 0);
-		assertEquals(-1, ttt.getSymbol(0, 0));
-	}
-	@Test 
-	public void mapUpdateTest3()
-	{
-		TicTacToe ttt = new TicTacToe();
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
-				ttt.add(i, j);
-			}
-		}
-		assertEquals(1, ttt.getSymbol(2, 2));
-	}
-
-
-	@Test 
-	public void WinnerTest1()
-	{
-		assertEquals(0, new TicTacToe().getWinner());
-	}
-	@Test 
-	public void WinnerTest2()
+	public void winnerTest1()
 	{
 		TicTacToe ttt = new TicTacToe();
 		ttt.add(0, 0);
 		ttt.add(0, 1);
+		ttt.add(1, 1);
+		ttt.add(1, 0);
+		ttt.add(2, 2);
+		assertEquals(1, ttt.getWinner());
+	}
+	@Test 
+	public void winnerTest2()
+	{
+		TicTacToe ttt = new TicTacToe();
+		ttt.add(0, 2);
+		ttt.add(0, 1);
 		ttt.add(1, 2);
 		ttt.add(1, 0);
 		ttt.add(2, 2);
-		assertEquals(1, ttt.getSymbol(2, 2));
+		assertEquals(1, ttt.getWinner());
 	}
+	@Test 
+	public void winnerTest3()
+	{
+		TicTacToe ttt = new TicTacToe();
+		ttt.add(0, 0);
+		ttt.add(1, 0);
+		ttt.add(2, 0);
+		ttt.add(1, 1);
+		ttt.add(2, 2);
+		ttt.add(1, 2);
+		assertEquals(-1, ttt.getWinner());
+	}
+	@Test 
+	public void winnerTest4()
+	{
+		TicTacToe ttt = new TicTacToe(10);
+		for (int i = 0; i < 10; i++)
+		{
+			ttt.add(9 - i, i);
+			if (i != 9) ttt.add(0, i);
+		}
+		assertEquals(1, ttt.getWinner());
+	}
+
+
+
+
+
+
 }
