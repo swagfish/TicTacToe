@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class TicTacToeTest 
 {
+	// TODO: Test exceptions
+
 	@Test
 	public void sizeTest1() 
 	{
@@ -17,5 +19,17 @@ public class TicTacToeTest
 	public void sizeTest2() 
 	{
 		assertEquals(12, new TicTacToe(12).getSize());
+	}
+
+	@Test
+	public void initialNextToMoveTest()
+	{
+		assertEquals(1, new TicTacToe().getNextToMove());
+	}
+
+	@Test
+	public void initialIsOverTest()
+	{
+		assertEquals(false, new TicTacToe().isOver());
 	}
 }
