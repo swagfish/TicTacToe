@@ -18,6 +18,8 @@ public class TicTacToe
 	private int size;
 	private byte nextToMove;
 	private boolean isOver;
+	private int movesLeft;
+	private byte winner;
 
 	public TicTacToe()
 	{
@@ -27,10 +29,10 @@ public class TicTacToe
 	{
 		//if (size < MIN_SIZE || size > MAX_SIZE) throw new Exception();
 		this.size = size;
-		map = new byte[size << 1];
+		map = new byte[size * size];
 		nextToMove = X;
+		movesLeft = map.length;
 	}
-
 
 	public int getSize()
 	{
@@ -46,11 +48,8 @@ public class TicTacToe
 	}
 	public byte getWinner()
 	{
-		return !isOver() ? NONE : (nextToMove == O ? X : O);
+		return winner; 
 	}
-
-
-
 	public byte getSymbol(int row, int column)
 	{
 		// TODO: ERROR HANDLING
@@ -59,9 +58,17 @@ public class TicTacToe
 	public void add(int row, int column)
 	{
 		int index = getIndex(row, column);
+		System.out.println(index);
+		System.out.println(map.length);
 		//if (isOver() || map[index] != NONE) return; // throw new Exception(); // <-- replace with appr. exceptions
 		//TODO: also add OOB checks for row/col
+		movesLeft--;
 		map[index] = nextToMove;
+		if ((movesLeft | 0x0) == 0) 
+		{
+			isOver = true;
+			return;
+		}
 		winCheck(nextToMove, row, column, index);
 		nextToMove = nextToMove == X ? O : X;
 	}
@@ -75,24 +82,13 @@ public class TicTacToe
 
 	private void winCheck(byte lastToMove, int row, int column, int index)
 	{
-		if (isOnNorthWestSouthEastDiagonal(row, column) && winOnNorthWestSouthEastDiagonal(lastToMove))
+		if ((isOnNorthWestSouthEastDiagonal(row, column) && winOnNorthWestSouthEastDiagonal(lastToMove)) ||
+			(isOnNorthEastSouthWestDiagonal(row, column) && winOnNorthEastSouthWestDiagonal(lastToMove)) ||
+			(winOnHorizontal(index, lastToMove)) ||
+			(winOnVertical(index, lastToMove)))
 		{
 			isOver = true;
-			return;
-		}
-		if (isOnNorthEastSouthWestDiagonal(row, column) && winOnNorthEastSouthWestDiagonal(lastToMove))
-		{
-			isOver = true;
-			return;
-		}
-		if (winOnHorizontal(index, lastToMove))
-		{
-			isOver = true;
-			return;
-		}
-		if (winOnVertical(index, lastToMove))
-		{
-			isOver = true;
+			winner = lastToMove;
 			return;
 		}
 	}
@@ -134,7 +130,7 @@ public class TicTacToe
 	private boolean winOnVertical(int index, byte match)
 	{
 		int min = (index % size);
-		for (int i = min; i < size * size; i += size)
+		for (int i = min; i < size * (size - 1); i += size)
 		{
 			if (map[i] != match) return false;
 		}
