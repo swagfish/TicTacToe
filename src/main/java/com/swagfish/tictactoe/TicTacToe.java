@@ -1,5 +1,6 @@
 package com.swagfish.tictactoe;
 
+import com.swagfish.tictactoe.exceptions.*;
 
 
 public class TicTacToe
@@ -21,13 +22,13 @@ public class TicTacToe
 	private int movesLeft;
 	private byte winner;
 
-	public TicTacToe()
+	public TicTacToe() throws InvalidTicTacToeSizeException
 	{
 		this(3);
 	}
-	public TicTacToe(int size)
+	public TicTacToe(int size) throws InvalidTicTacToeSizeException
 	{
-		//if (size < MIN_SIZE || size > MAX_SIZE) throw new Exception();
+		if (size < MIN_SIZE || size > MAX_SIZE) throw new InvalidTicTacToeSizeException();
 		this.size = size;
 		map = new byte[size * size];
 		nextToMove = X;
@@ -46,20 +47,21 @@ public class TicTacToe
 	{
 		return isOver;
 	}
-	public byte getWinner()
+	public byte getWinner() throws NoWinnerException
 	{
+		if (winner == NONE) throw new NoWinnerException();
 		return winner; 
 	}
-	public void add(int row, int column)
+	public void add(int row, int column) throws OutOfBoundsException, SquareOccupiedException
 	{
+		if (isOutOfBounds(row, column)) throw new OutOfBoundsException();
+
 		int index = getIndex(row, column);
-		System.out.println(index);
-		System.out.println(map.length);
-		//if (isOver() || map[index] != NONE) return; // throw new Exception(); // <-- replace with appr. exceptions
-		//TODO: also add OOB checks for row/col
+		if (map[index] != NONE) throw new SquareOccupiedException();
+
 		movesLeft--;
 		map[index] = nextToMove;
-		if ((movesLeft | 0x0) == 0) 
+		if (movesLeft == 0) 
 		{
 			isOver = true;
 			return;
@@ -67,8 +69,6 @@ public class TicTacToe
 		winCheck(nextToMove, row, column, index);
 		nextToMove = nextToMove == X ? O : X;
 	}
-
-
 
 	private int getIndex(int row, int column)
 	{
@@ -88,6 +88,10 @@ public class TicTacToe
 		}
 	}
 
+	private boolean isOutOfBounds(int row, int column)
+	{
+		return row < 0 || row >= size || column < 0 || column >= size;
+	}
 
 	private boolean isOnNorthWestSouthEastDiagonal(int row, int column)
 	{
@@ -125,7 +129,7 @@ public class TicTacToe
 	private boolean winOnVertical(int index, byte match)
 	{
 		int min = (index % size);
-		for (int i = min; i < size * (size - 1); i += size)
+		for (int i = min; i < size * size; i += size)
 		{
 			if (map[i] != match) return false;
 		}
