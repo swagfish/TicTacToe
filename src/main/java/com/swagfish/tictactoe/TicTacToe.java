@@ -50,11 +50,6 @@ public class TicTacToe
 	{
 		return winner; 
 	}
-	public byte getSymbol(int row, int column)
-	{
-		// TODO: ERROR HANDLING
-		return map[getIndex(row, column)];
-	}
 	public void add(int row, int column)
 	{
 		int index = getIndex(row, column);
