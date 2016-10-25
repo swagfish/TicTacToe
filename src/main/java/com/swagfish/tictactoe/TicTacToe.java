@@ -52,8 +52,9 @@ public class TicTacToe
 		if (winner == NONE) throw new NoWinnerException();
 		return winner; 
 	}
-	public void add(int row, int column) throws OutOfBoundsException, SquareOccupiedException
+	public void add(int row, int column) throws OutOfBoundsException, SquareOccupiedException, AlreadyOverException
 	{
+		if (isOver) throw new AlreadyOverException();		
 		if (isOutOfBounds(row, column)) throw new OutOfBoundsException();
 
 		int index = getIndex(row, column);
