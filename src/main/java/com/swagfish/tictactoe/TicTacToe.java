@@ -2,18 +2,13 @@ package com.swagfish.tictactoe;
 
 import com.swagfish.tictactoe.exceptions.*;
 
-
 public class TicTacToe
 {
-	// TODO: Create custom exception or throw more apprioriate ones
-
-
+	private static final int MIN_SIZE = 3;
+	private static final int MAX_SIZE = 10;
 	private static final byte NONE = 0;
 	private static final byte X = 1;
 	private static final byte O = -1;
-
-	private static final int MIN_SIZE = 3;
-	private static final int MAX_SIZE = 10;
 	
 	private byte[] map;
 	private int size;
