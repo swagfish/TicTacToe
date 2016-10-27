@@ -13,8 +13,9 @@ public class Main implements SparkApplication
 	{
 		staticFileLocation("/public");
 		SparkApplication web  = new Main();
-
-		port(5555);
+		
+		String port = System.getenv("PORT");
+		if (port != null) port(Integer.valueOf(port));
 		web.init();
 	}
 
