@@ -14,67 +14,80 @@ public class WebServer implements SparkApplication
 	public static void main(String[] args)
 	{
 		staticFileLocation("/public");
-		SparkApplication web  = new WebServer();
-		
+		SparkApplication web  = new WebServer();		
 		String port = System.getenv("PORT");
 		if (port != null) port(Integer.valueOf(port));
 		web.init();
 	}
 
-
-	private char handleRequest(int x, int y)
+	@Override
+	public void init()
 	{
-
-
 		try
 		{
-			ttt.add(x,y);
-
+			ttt = new TicTacToe();
 		}
-		catch(Exception ex)
+		catch(InvalidTicTacToeSizeException ex) { }
+		// NEW GAME WHEN REFRESHED
+		get("/", (req, res) ->  {
+			try
+			{
+				ttt = new TicTacToe();
+				res.status(200);
+			}
+			catch(InvalidTicTacToeSizeException ex) 
+			{
+				res.status(400);
+			}
+			return res;
+		});
+
+		// Handle ttt squares
+		post("/button1", (req, res) ->  handleRequest(0));
+		post("/button2", (req, res) ->  handleRequest(1));
+		post("/button3", (req, res) ->  handleRequest(2));
+		post("/button4", (req, res) ->  handleRequest(3));
+		post("/button5", (req, res) ->  handleRequest(4));
+		post("/button6", (req, res) ->  handleRequest(5));
+		post("/button7", (req, res) ->  handleRequest(6));
+		post("/button8", (req, res) ->  handleRequest(7));
+		post("/button9", (req, res) ->  handleRequest(8));
+
+		// Handle new game button
+		post("/newgame", (req, res) ->  {
+			try
+			{
+				ttt = new TicTacToe();
+				res.status(200);
+			}
+			catch(InvalidTicTacToeSizeException ex) 
+			{ 
+				res.status(400);
+			}
+			return res;
+		});
+	}
+
+	private char handleRequest(int index)
+	{
+		try
 		{
+			ttt.add(index);
 
 		}
+		catch (OutOfBoundsException ex) { }
+		catch (SquareOccupiedException ex) { }
+		catch (AlreadyOverException ex) { }
 		finally
 		{
 			try
 			{
-					return ttt.getSquare(x,y);
+				return ttt.getSquare(index);
 			}
 			catch(Exception ex)
 			{
 				return ' ';
 			}
 		}
-	}
-
-	@Override
-	public void init()
-	{
-		try{
-			ttt = new TicTacToe();
-		}catch(Exception ex){}
-
-		get("/", (req, res) ->  {
-			try{
-				ttt = new TicTacToe();
-			}catch(Exception ex){}
-			return "";
-		});
-		post("/button1", (req, res) ->  handleRequest(0,0));
-		post("/button2", (req, res) ->  handleRequest(0,1));
-		post("/button3", (req, res) ->  handleRequest(0,2));
-		post("/button4", (req, res) ->  handleRequest(1,0));
-		post("/button5", (req, res) ->  handleRequest(1,1));
-		post("/button6", (req, res) ->  handleRequest(1,2));
-		post("/button7", (req, res) ->  handleRequest(2,0));
-		post("/button8", (req, res) ->  handleRequest(2,1));
-		post("/button9", (req, res) ->  handleRequest(2,2));
-		post("/newgame", (req, res) ->  {
-			try{
-				ttt = new TicTacToe();
-			}catch(Exception ex){}
-			return " ";
-		});
 	}
 }
