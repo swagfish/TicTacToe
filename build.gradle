@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "com.swagfish.tictactoe.Main"
+mainClassName = "com.swagfish.server.WebServer"
 
 repositories {
 	jcenter()
@@ -16,7 +16,7 @@ dependencies {
 
 jar {
 	manifest {
-		attributes("Main-Class": "com.swagfish.tictactoe.Main")
+		attributes("Main-Class": "com.swagfish.server.WebServer")
 	}
 }
 
