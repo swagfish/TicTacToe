@@ -1,18 +1,20 @@
-package com.swagfish.tictactoe;
+package com.swagfish.server;
 
 import static spark.Spark.*;
 import spark.*;
 import spark.servlet.SparkApplication;
+import com.swagfish.tictactoe.TicTacToe;
+import com.swagfish.tictactoe.exceptions.*;
 
 
-public class Main implements SparkApplication
+public class WebServer implements SparkApplication
 {
 	private TicTacToe ttt;
 
 	public static void main(String[] args)
 	{
 		staticFileLocation("/public");
-		SparkApplication web  = new Main();
+		SparkApplication web  = new WebServer();
 		
 		String port = System.getenv("PORT");
 		if (port != null) port(Integer.valueOf(port));
