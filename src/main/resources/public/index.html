@@ -6,17 +6,38 @@
 </title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 <style type="text/css">
+
 .btn-primary {
 	height: 50px !important;
 	width: 50px !important;
+	border-radius: 0 !important;
 }
 
-#error {
-	float:right;
+.game-container {
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fix {
+	width: 150px !important;
+	text-align: center;
+}
+
+.new-game {
+	text-align: center;
+}
+
+input {
+ border: none;
+ text-align: center;
+}
+
+.windiv {
+	text-align: center;
 }
 
 </style>
@@ -25,7 +46,16 @@
 </head>
 <body>
 
-<TABLE>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Swagfish - TicTacToe</h1>
+		<h2>A project in software engineering at Reykjavík University</h2>
+	</div>
+</div>
+
+
+<div class="game-container">
+<table class="container fix">
 <TR id="row1">
 	<td>
 		<input class="btn btn-primary btn-block" id="btn1" type="submit" name="button1" value="">
@@ -57,12 +87,13 @@
 		<input class="btn btn-primary btn-block" id="btn9" type="submit" name="button9" value="">
 	</td>
 </TABLE>
-	<input class="btn btn-success" id="newgame" type="submit" name="ng" value="New Game">
-
-<div id = "error"></div>
-
-
-
+<div class="new-game">
+<input class="btn btn-success" id="newgame" type="submit" name="ng" value="New Game">
+</div>
+</div>
+<div class="windiv">
+<input id="winner">
+</div>
 <script>
 
 $( document ).ready(
@@ -80,6 +111,7 @@ $( document ).ready(
 					$( '#btn1' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 		$( '#btn2').click( function(){
@@ -90,6 +122,7 @@ $( document ).ready(
 					$( '#btn2' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 		$( '#btn3').click( function(){
@@ -100,6 +133,7 @@ $( document ).ready(
 					$( '#btn3' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 		$( '#btn4').click( function(){
@@ -110,6 +144,7 @@ $( document ).ready(
 					$( '#btn4' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 		$( '#btn5').click( function(){
@@ -120,6 +155,7 @@ $( document ).ready(
 					$( '#btn5' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 		$( '#btn6').click( function(){
@@ -130,6 +166,7 @@ $( document ).ready(
 					$( '#btn6' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 		$( '#btn7').click( function(){
@@ -140,6 +177,7 @@ $( document ).ready(
 					$( '#btn7' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 		$( '#btn8').click( function(){
@@ -150,6 +188,7 @@ $( document ).ready(
 					$( '#btn8' ).val( data );
 				}
 		 	);
+			getWinner();
 		});
 
 		$( '#btn9').click( function(){
@@ -160,6 +199,7 @@ $( document ).ready(
 					$( '#btn9' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
 
 
@@ -179,7 +219,17 @@ $( document ).ready(
 					$( '#btn9' ).val( data );
 				}
 			 );
+			 getWinner();
 		});
+		function getWinner()
+		{
+			$.post( "/getwinner", {},
+			function ( data )
+			{
+				$( '#winner').val( data );
+			})
+			;
+		}
 	}
 );
 
