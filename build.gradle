@@ -49,3 +49,7 @@ jacocoTestReport {
 }
 
 check.dependsOn jacocoTestReport
+
+task tttDocs(type: Javadoc) {
+  destinationDir = reporting.file("docs")
+}
