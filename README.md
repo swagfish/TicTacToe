@@ -22,49 +22,50 @@ Table of contents
 ### Project Structure
 ```
 root
-└─ bin
-   └─ check_code.sh
-   └─ clean.sh
-   └─ compile.sh
-   └─ deploy.sh
-   └─ package.sh
-   └─ run_all.sh
-   └─ unit_test.sh
-└─ gradle
-└─ src
-   └─ main
-      └─ java
-         └─ com
-            └─ swagfish
-               └─ server
-                  └─ WebServer.java
-               └─ tictactoe
-                  └─ TicTacToe.java
-                  └─ exceptions
-                     └─ AlreadyOverException.java
-                     └─ InvalidTicTacToeSizeException.java
-                     └─ NoWinnerException.java
-                     └─ OutOfBoundsException.java
-                     └─ SquareOccupiedException.java
-      └─ resources
-         └─ public
-            └─ index.html
-   └─ test
-      └─ java
-         └─ com
-            └─ swagfish
-               └─ server
-                  └─ WebServerTest.java
-               └─ tictactoe
-                  └─ TicTacToeTest.java
-└─ build.gradle
-└─ gradlew
-└─ gradlew.bat
-└─ LICENSE.md
-└─ Procfile
-└─ README.md
-└─ settings.gradle
-└─ system.properties
-└─ .gitignore
+|─ bin
+|  |─ check_code.sh
+|  |─ clean.sh
+|  |─ compile.sh
+|  |─ deploy.sh
+|  |─ package.sh
+|  |─ run_all.sh
+|  └─ unit_test.sh
+|─ gradle
+|─ src
+|  |─ main
+|  |  |─ java
+|  |  |  └─ com
+|  |  |     └─ swagfish
+|  |  |        |─ server
+|  |  |        |  └─ WebServer.java
+|  |  |        └─ tictactoe
+|  |  |           |─ TicTacToe.java
+|  |  |           └─ exceptions
+|  |  |              |─ AlreadyOverException.java
+|  |  |              |─ InvalidTicTacToeSizeException.java
+|  |  |              |─ NoWinnerException.java
+|  |  |              |─ OutOfBoundsException.java
+|  |  |              └─ SquareOccupiedException.java
+|  |  └─ resources
+|  |     └─ public
+|  |        └─ index.html
+|  └─ test
+|     └─ java
+|        └─ com
+|           └─ swagfish
+|              |─ server
+|              |  └─ WebServerTest.java
+|              └─ tictactoe
+|                 └─ TicTacToeTest.java
+|─ build.gradle
+|─ gradlew
+|─ gradlew.bat
+|─ LICENSE.md
+|─ Procfile
+|─ README.md
+|─ settings.gradle
+|─ system.properties
+|─ .git
+|─ .gitignore
 └─ .travis.yml
 ```
