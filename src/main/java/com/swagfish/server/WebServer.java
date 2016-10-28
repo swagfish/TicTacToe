@@ -28,6 +28,7 @@ public class WebServer implements SparkApplication
 			ttt = new TicTacToe();
 		}
 		catch(InvalidTicTacToeSizeException ex) { }
+
 		// NEW GAME WHEN REFRESHED
 		get("/", (req, res) ->  {
 			try
@@ -72,22 +73,21 @@ public class WebServer implements SparkApplication
 	{
 		try
 		{
-			ttt.add(index);
-
+			return handleRequestHelper(index);
 		}
-		catch (OutOfBoundsException ex) { }
+		catch (OutOfBoundsException e)
+		{
+			return ' ';
+		}
+	}
+	private char handleRequestHelper(int index) throws OutOfBoundsException
+	{
+		try
+		{
+			ttt.add(index);
+		}
 		catch (SquareOccupiedException ex) { }
 		catch (AlreadyOverException ex) { }
-		finally
-		{
-			try
-			{
-				return ttt.getSquare(index);
-			}
-			catch(Exception ex)
-			{
-				return ' ';
-			}
-		}
+		return ttt.getSquare(index);
 	}
 }

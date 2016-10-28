@@ -29,7 +29,6 @@ public class TicTacToe
 		nextToMove = X;
 		movesLeft = map.length;
 	}
-
 	public int getSize()
 	{
 		return size;
@@ -51,8 +50,6 @@ public class TicTacToe
 	{
 		add(row, column, getIndex(row, column));
 	}
-
-	// TODO: Tests
 	public void add(int index) throws OutOfBoundsException, SquareOccupiedException, AlreadyOverException
 	{
 		add(getRow(index), getColumn(index), index);
@@ -68,7 +65,6 @@ public class TicTacToe
 	{
 		return getSquare(getIndex(row, column));
 	}
-
 
 	private void add(int row, int column, int index)  throws OutOfBoundsException, SquareOccupiedException, AlreadyOverException
 	{
@@ -86,7 +82,6 @@ public class TicTacToe
 		winCheck(nextToMove, row, column, index);
 		nextToMove = nextToMove == X ? O : X;
 	}
-
 	private int getRow(int index)
 	{
 		return index / size;
@@ -99,7 +94,6 @@ public class TicTacToe
 	{
 		return row * size + column;
 	}
-
 	private void winCheck(byte lastToMove, int row, int column, int index)
 	{
 		if ((isOnNorthWestSouthEastDiagonal(row, column) && winOnNorthWestSouthEastDiagonal(lastToMove)) ||
@@ -112,7 +106,6 @@ public class TicTacToe
 			return;
 		}
 	}
-
 	private boolean isOutOfBounds(int row, int column)
 	{
 		return row < 0 || row >= size || column < 0 || column >= size;
@@ -121,7 +114,6 @@ public class TicTacToe
 	{
 		return index < 0 || index >= map.length;
 	}
-
 	private boolean isOnNorthWestSouthEastDiagonal(int row, int column)
 	{
 		return row == column;
