@@ -1,26 +1,18 @@
 ﻿# TicTacToe
 
-Table of contents
-=================
+Master:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/TicTacToe)
+Develop:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
 
-  * [Master](#master)
-  * [Develop](#develop)
-  * [Heroku Deployment](#heroku-deployment)
-
-## Master
-[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/TicTacToe)
-
-## Develop
-[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
-
-## Heroku Deployment
-[![Heroku](https://heroku-badge.herokuapp.com/?app=arcane-tundra-47758)]
-[TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
-
-## Code Coverage
+![Heroku](https://heroku-badge.herokuapp.com/?app=arcane-tundra-47758)
 [![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=develop)
 
-### Project Structure
+# Play
+[Swagfish represents TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
+
+# Project website
+[Visit our website](https://swagfish.github.io/TicTacToe/)
+
+# Project structure
 ```
 root
 |─ bin
