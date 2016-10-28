@@ -2,6 +2,7 @@
 
 ./bin/clean
 ./bin/compile
+./bin/check_code
 ./bin/unit_test
 ./bin/package
 ./bin/deploy

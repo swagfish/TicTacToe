@@ -4,27 +4,187 @@
 <title>
 	SWAGFISH - TicTacToe
 </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<style type="text/css">
+.btn-primary {
+	height: 50px !important;
+	width: 50px !important;
+}
+
+#error {
+	float:right;
+}
+
+</style>
+
+
 </head>
 <body>
 
-<h2>Sign in</h2>
+<TABLE>
+<TR id="row1">
+	<td>
+		<input class="btn btn-primary btn-block" id="btn1" type="submit" name="button1" value="">
+	</td>
+	<td>
+		<input class="btn btn-primary btn-block" id="btn2" type="submit" name="button2" value="">
+	</td>
+	<td>
+		<input class="btn btn-primary btn-block" id="btn3" type="submit" name="button3" value="">
+	</td>
+<TR id="row2">
+	<td>
+		<input class="btn btn-primary btn-block" id="btn4" type="submit" name="button4" value="">
+	</td>
+	<td>
+		<input class="btn btn-primary btn-block" id="btn5" type="submit" name="button5" value="">
+	</td>
+	<td>
+		<input class="btn btn-primary btn-block" id="btn6" type="submit" name="button6" value="">
+	</td>
+<TR id="row3">
+	<td>
+		<input class="btn btn-primary btn-block" id="btn7" type="submit" name="button7" value="">
+	</td>
+	<td>
+		<input class="btn btn-primary btn-block" id="btn8" type="submit" name="button8" value="">
+	</td>
+	<td>
+		<input class="btn btn-primary btn-block" id="btn9" type="submit" name="button9" value="">
+	</td>
+</TABLE>
+	<input class="btn btn-success" id="newgame" type="submit" name="ng" value="New Game">
 
-<form action="/signin" method="POST">
-<input class="form-control" id="username" name="username" placeholder="Username" type="text" value="" />
-<input class="form-control" id="password" name="password" placeholder="Password" type="password" value="" />
-<input id="btn_signin" name="btn_signin" type="submit" class="btn btn-default" value="Sign in" />
-</form>
+<div id = "error"></div>
 
 
-<h2>Sign up</h2>
-<form action="/signup" method="POST">
-<input class="form-control" id="username" name="username" placeholder="Username" type="text" value="" />
-<input class="form-control" id="password" name="password" placeholder="Password" type="password" value="" />
-<input class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" type="password" value="" />
-<input id="btn_signup" name="btn_signup" type="submit" class="btn btn-default" value="Sign up" />
-</form>
+
+<script>
+
+$( document ).ready(
+	function()
+	{
+		$( '#btn1').click( function(){
+
+			$.post( "/button1", {},
+				function ( data )
+				{
+					if(data == "1")
+					{
+						$( '#error').val("Already occupied");
+					}
+					$( '#btn1' ).val( data );
+				}
+			 );
+		});
+
+		$( '#btn2').click( function(){
+
+			$.post( "/button2", {},
+				function ( data )
+				{
+					$( '#btn2' ).val( data );
+				}
+			 );
+		});
+
+		$( '#btn3').click( function(){
+
+			$.post( "/button3", {},
+				function ( data )
+				{
+					$( '#btn3' ).val( data );
+				}
+			 );
+		});
+
+		$( '#btn4').click( function(){
+
+			$.post( "/button4", {},
+				function ( data )
+				{
+					$( '#btn4' ).val( data );
+				}
+			 );
+		});
+
+		$( '#btn5').click( function(){
+
+			$.post( "/button5", {},
+				function ( data )
+				{
+					$( '#btn5' ).val( data );
+				}
+			 );
+		});
+
+		$( '#btn6').click( function(){
+
+			$.post( "/button6", {},
+				function ( data )
+				{
+					$( '#btn6' ).val( data );
+				}
+			 );
+		});
+
+		$( '#btn7').click( function(){
+
+			$.post( "/button7", {},
+				function ( data )
+				{
+					$( '#btn7' ).val( data );
+				}
+			 );
+		});
+
+		$( '#btn8').click( function(){
+
+			$.post( "/button8", {},
+				function ( data )
+				{
+					$( '#btn8' ).val( data );
+				}
+		 	);
+		});
+
+		$( '#btn9').click( function(){
+
+			$.post( "/button9", {},
+				function ( data )
+				{
+					$( '#btn9' ).val( data );
+				}
+			 );
+		});
+
+
+		$( '#newgame').click( function(){
+
+			$.post( "/newgame", {},
+				function ( data )
+				{
+					$( '#btn1' ).val( data );
+					$( '#btn2' ).val( data );
+					$( '#btn3' ).val( data );
+					$( '#btn4' ).val( data );
+					$( '#btn5' ).val( data );
+					$( '#btn6' ).val( data );
+					$( '#btn7' ).val( data );
+					$( '#btn8' ).val( data );
+					$( '#btn9' ).val( data );
+				}
+			 );
+		});
+	}
+);
+
+</script>
 
 
 </body>
 </html>
-

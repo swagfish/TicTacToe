@@ -29,7 +29,6 @@ public class TicTacToe
 		nextToMove = X;
 		movesLeft = map.length;
 	}
-
 	public int getSize()
 	{
 		return size;
@@ -49,10 +48,28 @@ public class TicTacToe
 	}
 	public void add(int row, int column) throws OutOfBoundsException, SquareOccupiedException, AlreadyOverException
 	{
-		if (isOver) throw new AlreadyOverException();		
-		if (isOutOfBounds(row, column)) throw new OutOfBoundsException();
+		add(row, column, getIndex(row, column));
+	}
+	public void add(int index) throws OutOfBoundsException, SquareOccupiedException, AlreadyOverException
+	{
+		add(getRow(index), getColumn(index), index);
+	}
+	// TODO: Tests
+	public char getSquare(int index) throws OutOfBoundsException
+	{
+		if (isOutOfBounds(index)) throw new OutOfBoundsException();
+		return map[index] == 0 ? ' ' : (map[index] == 1 ? 'X' : 'O');
+	}
+	// TODO: Tests
+	public char getSquare(int row, int column) throws OutOfBoundsException
+	{
+		return getSquare(getIndex(row, column));
+	}
 
-		int index = getIndex(row, column);
+	private void add(int row, int column, int index)  throws OutOfBoundsException, SquareOccupiedException, AlreadyOverException
+	{
+		if (isOver) throw new AlreadyOverException();
+		if (isOutOfBounds(row, column)) throw new OutOfBoundsException();
 		if (map[index] != NONE) throw new SquareOccupiedException();
 
 		movesLeft--;
@@ -65,12 +82,18 @@ public class TicTacToe
 		winCheck(nextToMove, row, column, index);
 		nextToMove = nextToMove == X ? O : X;
 	}
-
+	private int getRow(int index)
+	{
+		return index / size;
+	}
+	private int getColumn(int index)
+	{
+		return index % size;
+	}
 	private int getIndex(int row, int column)
 	{
 		return row * size + column;
 	}
-
 	private void winCheck(byte lastToMove, int row, int column, int index)
 	{
 		if ((isOnNorthWestSouthEastDiagonal(row, column) && winOnNorthWestSouthEastDiagonal(lastToMove)) ||
@@ -83,12 +106,14 @@ public class TicTacToe
 			return;
 		}
 	}
-
 	private boolean isOutOfBounds(int row, int column)
 	{
 		return row < 0 || row >= size || column < 0 || column >= size;
 	}
-
+	private boolean isOutOfBounds(int index)
+	{
+		return index < 0 || index >= map.length;
+	}
 	private boolean isOnNorthWestSouthEastDiagonal(int row, int column)
 	{
 		return row == column;
@@ -130,21 +155,5 @@ public class TicTacToe
 			if (map[i] != match) return false;
 		}
 		return true;
-	}
-
-	public String toString()
-	{
-		StringBuilder retVal = new StringBuilder();
-		for (int i = 0; i < size * size;)
-		{
-			for (int j = 0; j < size; j++, i++)
-			{
-				retVal.append('[');
-				retVal.append(map[i] == NONE ? ' ' : (map[i] == X ? 'X' : 'O'));
-				retVal.append(']');
-			}
-			retVal.append('\n');
-		}
-		return retVal.substring(0, retVal.length() - 1);
 	}
 }
