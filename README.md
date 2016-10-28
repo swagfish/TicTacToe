@@ -14,6 +14,7 @@ Table of contents
 [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
 
 ## Heroku Deployment
+[![Heroku](https://arcane-tundra-47758.herokuapp.com/?app=resorver-dogs)]
 [TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
 
 ## Code Coverage

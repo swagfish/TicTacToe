@@ -40,7 +40,7 @@ public class WebServer implements SparkApplication
 			{
 				res.status(400);
 			}
-			return res;
+			return "";
 		});
 
 		// Handle ttt squares
@@ -65,7 +65,7 @@ public class WebServer implements SparkApplication
 			{ 
 				res.status(400);
 			}
-			return res;
+			return "";
 		});
 	}
 
