@@ -13,16 +13,24 @@ public class WebServer implements SparkApplication
 
 	public static void main(String[] args)
 	{
+		// path of html files
 		staticFileLocation("/public");
-		SparkApplication web  = new WebServer();		
+
+		// new instance of webserv
+		SparkApplication web  = new WebServer();
+
+		// set poort
 		String port = System.getenv("PORT");
 		if (port != null) port(Integer.valueOf(port));
+
+		// setup server listeners
 		web.init();
 	}
 
 	@Override
 	public void init()
 	{
+		// Create new game on start
 		try
 		{
 			ttt = new TicTacToe();
@@ -43,7 +51,7 @@ public class WebServer implements SparkApplication
 			return "";
 		});
 
-		// Handle ttt squares
+		// Handle each square of the game
 		post("/button1", (req, res) ->  handleRequest(0));
 		post("/button2", (req, res) ->  handleRequest(1));
 		post("/button3", (req, res) ->  handleRequest(2));
@@ -53,6 +61,9 @@ public class WebServer implements SparkApplication
 		post("/button7", (req, res) ->  handleRequest(6));
 		post("/button8", (req, res) ->  handleRequest(7));
 		post("/button9", (req, res) ->  handleRequest(8));
+
+		// On each call, we display the winner, if any
+		post("/getwinner", (req, res) -> displayWinner());
 
 		// Handle new game button
 		post("/newgame", (req, res) ->  {
@@ -69,6 +80,7 @@ public class WebServer implements SparkApplication
 		});
 	}
 
+	// error handler for handlerequesthelper which calls add() in ttt
 	private char handleRequest(int index)
 	{
 		try
@@ -80,6 +92,8 @@ public class WebServer implements SparkApplication
 			return ' ';
 		}
 	}
+
+	// returns the char (' ' if none) that should occupy the square
 	private char handleRequestHelper(int index) throws OutOfBoundsException
 	{
 		try
@@ -89,5 +103,18 @@ public class WebServer implements SparkApplication
 		catch (SquareOccupiedException ex) { }
 		catch (AlreadyOverException ex) { }
 		return ttt.getSquare(index);
+	}
+
+	// Returns results, if any (empty string on none finished games)
+	private String displayWinner()
+	{
+		try 
+		{
+			return ttt.getWinner() == 1 ? "X wins" : "O wins";
+		}
+		catch (NoWinnerException ex)
+		{
+			return "";
+		}
 	}
 }
