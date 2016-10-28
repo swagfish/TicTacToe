@@ -4,15 +4,7 @@ Master:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=mast
 Develop:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
 
 ![Heroku](https://heroku-badge.herokuapp.com/?app=arcane-tundra-47758)
-
 [![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=develop)
-
-Table of contents
-=================
-
-  * [Play!](#Play)
-  * [Website](#Project website)
-  * [Project structure](#Project structure)
 
 # Play
 [Swagfish represents TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
