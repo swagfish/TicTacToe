@@ -28,6 +28,7 @@ public class WebServer implements SparkApplication
 			ttt = new TicTacToe();
 		}
 		catch(InvalidTicTacToeSizeException ex) { }
+
 		// NEW GAME WHEN REFRESHED
 		get("/", (req, res) ->  {
 			try
@@ -67,7 +68,6 @@ public class WebServer implements SparkApplication
 			return res;
 		});
 	}
-
 
 	private char handleRequest(int index)
 	{
