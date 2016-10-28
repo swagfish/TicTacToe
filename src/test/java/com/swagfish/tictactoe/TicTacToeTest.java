@@ -155,7 +155,6 @@ public class TicTacToeTest
 			assertEquals(0, 1);
 		}
 	}
-
 	@Test
 	public void NextToMoveTest6()
 	{
@@ -176,6 +175,34 @@ public class TicTacToeTest
 				}
 			}
 			ttt.add(4, 4);
+			assertEquals(-1, ttt.getNextToMove());
+		} 
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (OutOfBoundsException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (SquareOccupiedException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex)
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test
+	public void NextToMoveTest7()
+	{
+		try 
+		{
+			TicTacToe ttt = new TicTacToe(10);
+			ttt.add(5);
+			ttt.add(8);
+			ttt.add(20);
 			assertEquals(-1, ttt.getNextToMove());
 		} 
 		catch (InvalidTicTacToeSizeException ex)
@@ -509,6 +536,36 @@ public class TicTacToeTest
 			assertEquals(0, 1);
 		}
 	}
+	@Test
+	public void isOverTest11()
+	{
+		try 
+		{
+			TicTacToe ttt = new TicTacToe(3);
+			ttt.add(0);
+			ttt.add(3);
+			ttt.add(1);
+			ttt.add(4);
+			ttt.add(2);
+			assertEquals(true, ttt.isOver());
+		} 
+		catch (InvalidTicTacToeSizeException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (OutOfBoundsException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (SquareOccupiedException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
 
 	@Test 
 	public void winnerTest1()
@@ -647,6 +704,186 @@ public class TicTacToeTest
 			assertEquals(0, 1);
 		}
 	}
+	@Test 
+	public void winnerTest5()
+	{
+		try 
+		{
+			TicTacToe ttt = new TicTacToe();
+			ttt.add(1);
+			ttt.add(0);
+			ttt.add(5);
+			ttt.add(4);
+			ttt.add(6);
+			ttt.add(8);
+			assertEquals(-1, ttt.getWinner());
+		} 
+		catch (InvalidTicTacToeSizeException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (NoWinnerException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (OutOfBoundsException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (SquareOccupiedException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+
+	@Test
+	public void getSquareTest1()
+	{
+		try
+		{
+			assertEquals(' ', new TicTacToe().getSquare(0));
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex)
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test
+	public void getSquareTest2()
+	{
+		try
+		{
+			assertEquals(' ', new TicTacToe().getSquare(1,1));
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex)
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test
+	public void getSquareTest3()
+	{
+		try
+		{
+			TicTacToe ttt = new TicTacToe();
+			ttt.add(1);
+			assertEquals('X', ttt.getSquare(0, 1));
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (SquareOccupiedException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test
+	public void getSquareTest4()
+	{
+		try
+		{
+			TicTacToe ttt = new TicTacToe();
+			ttt.add(1);
+			ttt.add(8);
+			assertEquals('O', ttt.getSquare(2, 2));
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (SquareOccupiedException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test
+	public void getSquareTest5()
+	{
+		try
+		{
+			TicTacToe ttt = new TicTacToe(5);
+			ttt.add(2, 2);
+			ttt.add(1, 1);
+			ttt.add(3, 3);
+			ttt.add(0);
+			ttt.add(5 * 5 - 1);
+			assertEquals('X', ttt.getSquare(	4, 4));
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (SquareOccupiedException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test
+	public void getSquareTest6()
+	{
+		try
+		{
+			TicTacToe ttt = new TicTacToe();
+			for (int i = 0; i < 6; i++)
+			{
+				ttt.add(i);
+			}
+			assertEquals('O', ttt.getSquare(3));
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex)
+		{
+			assertEquals(0, 1);
+		}
+		catch (SquareOccupiedException ex)
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
 
 	@Test(expected = InvalidTicTacToeSizeException.class)
 	public void sizeExceptionTest1() throws InvalidTicTacToeSizeException 
@@ -722,7 +959,35 @@ public class TicTacToeTest
 			ttt.add(2, 2);
 			ttt.add(2, 1);
 			ttt.getWinner();
+		}
+		catch (InvalidTicTacToeSizeException ex) 
+		{
+			assertEquals(0, 1);
 		} 
+		catch (OutOfBoundsException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (SquareOccupiedException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test(expected = NoWinnerException.class)
+	public void noWinnerExceptionTest4() throws NoWinnerException 
+	{
+		try 
+		{
+			TicTacToe ttt = new TicTacToe();
+			ttt.add(1);
+			ttt.add(4);
+			ttt.add(0);
+			ttt.getWinner();
+		}
 		catch (InvalidTicTacToeSizeException ex) 
 		{
 			assertEquals(0, 1);
@@ -806,6 +1071,75 @@ public class TicTacToeTest
 			assertEquals(0, 1);
 		}
 	}
+	@Test(expected = OutOfBoundsException.class)
+	public void outOfBoundsExceptionTest4() throws OutOfBoundsException 
+	{
+		try 
+		{
+			TicTacToe ttt = new TicTacToe();
+			ttt.add(-1);
+		} 
+		catch (InvalidTicTacToeSizeException ex) 
+		{
+			assertEquals(0, 1);
+		}
+		catch (SquareOccupiedException ex) 
+		{
+			assertEquals(0, 1);
+		} 
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test(expected = OutOfBoundsException.class)
+	public void outOfBoundsExceptionTest5() throws OutOfBoundsException 
+	{
+		try 
+		{
+			new TicTacToe().getSquare(-5);
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test(expected = OutOfBoundsException.class)
+	public void outOfBoundsExceptionTest6() throws OutOfBoundsException 
+	{
+		try 
+		{
+			new TicTacToe(5).getSquare(-1);
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test(expected = OutOfBoundsException.class)
+	public void outOfBoundsExceptionTest7() throws OutOfBoundsException 
+	{
+		try 
+		{
+			new TicTacToe(8).getSquare(8 * 8);
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test(expected = OutOfBoundsException.class)
+	public void outOfBoundsExceptionTest8() throws OutOfBoundsException 
+	{
+		try 
+		{
+			new TicTacToe().getSquare(22);
+		}
+		catch (InvalidTicTacToeSizeException ex)
+		{
+			assertEquals(0, 1);
+		}
+	}
 
 	@Test(expected = SquareOccupiedException.class)
 	public void squareOccupiedException1() throws SquareOccupiedException
@@ -839,6 +1173,29 @@ public class TicTacToeTest
 			ttt.add(1, 1);
 			ttt.add(2, 0);
 			ttt.add(1, 1);
+		}
+		catch (InvalidTicTacToeSizeException ex) 
+		{
+			assertEquals(0, 1);
+		}
+		catch (AlreadyOverException ex) 
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test(expected = SquareOccupiedException.class)
+	public void squareOccupiedException3() throws SquareOccupiedException
+	{
+		try 
+		{
+			TicTacToe ttt = new TicTacToe(3);
+			ttt.add(0);
+			ttt.add(1);
+			ttt.add(0);
 		}
 		catch (InvalidTicTacToeSizeException ex) 
 		{
@@ -892,6 +1249,31 @@ public class TicTacToeTest
 				{
 					ttt.add(i, j);
 				}
+			}
+		}
+		catch (InvalidTicTacToeSizeException ex) 
+		{
+			assertEquals(0, 1);
+		}
+		catch (OutOfBoundsException ex) 
+		{
+			assertEquals(0, 1);
+		}
+		catch (SquareOccupiedException ex) 
+		{
+			assertEquals(0, 1);
+		}
+	}
+	@Test(expected = AlreadyOverException.class)
+	public void alreadyOverException3() throws AlreadyOverException
+	{
+		try 
+		{
+			TicTacToe ttt = new TicTacToe(5);
+			for (int i = 0; i < 5; i++)
+			{
+				ttt.add(i);
+				ttt.add(i + 5);
 			}
 		}
 		catch (InvalidTicTacToeSizeException ex) 
