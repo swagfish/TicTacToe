@@ -10,7 +10,7 @@ mainClassName = "com.swagfish.server.WebServer"
 repositories {
 	jcenter()
 }
-ourceSets {
+sourceSets {
 	selenium
 }
 dependencies {
