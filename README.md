@@ -1,5 +1,7 @@
 ﻿# TicTacToe
 
+![alt tag](https://swagfish.github.io/TicTacToe/images/gameplay.gif)
+
 Master:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/TicTacToe)
 Develop:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
 
