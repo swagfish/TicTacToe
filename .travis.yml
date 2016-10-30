@@ -9,4 +9,4 @@ notifications:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
-script: ./bin/run_selenium
+script: ./gradlew clean selenium
