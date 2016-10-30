@@ -25,16 +25,16 @@ public abstract class SeleniumTestWrapper
     caps.setCapability(
       PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
       "/phantomjs"
-    );*/
-    //driver = new PhantomJSDriver(caps);
+    );
+    driver = new PhantomJSDriver(caps);*/
     driver = new PhantomJSDriver();
-    //driver = new ChromeDriver();
+    //river = new ChromeDriver();
 
 
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-    /* For local testing
-    System.getenv("PORT");
+    //For local testing
+  /*  System.getenv("PORT");
         if (port == null) {
             port = "4567";
         }
