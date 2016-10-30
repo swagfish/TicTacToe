@@ -10,12 +10,17 @@ mainClassName = "com.swagfish.server.WebServer"
 repositories {
 	jcenter()
 }
-
+sourceSets {
+	selenium
+}
 dependencies {
 	compile 'org.slf4j:slf4j-api:1.7.5'
 	compile 'org.slf4j:slf4j-simple:1.7.5'
 	testCompile 'junit:junit:4.11'
 	compile 'com.sparkjava:spark-core:2.5'
+
+	seleniumCompile 'junit:junit:4.11'
+	seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
 }
 
 jar {
@@ -26,6 +31,11 @@ jar {
 
 task stage {
 	dependsOn installDist
+}
+
+task selenium(type: Test, dependsOn: installDist) {
+	testClassesDir = sourceSets.selenium.output.classesDir
+	classpath = sourceSets.selenium.runtimeClasspath
 }
 
 buildscript {
