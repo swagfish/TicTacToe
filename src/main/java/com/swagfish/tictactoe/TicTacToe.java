@@ -99,6 +99,9 @@ public class TicTacToe
 	 * Add a symbol to the right place
 	 * @param row The row
 	 * @param column The column
+	 * @throws OutOfBoundsException Out of bounds
+	 * @throws SquareOccupiedException The square is occupied
+	 * @throws AlreadyOverException Game is already over
 	 */
 
 	public void add(int row, int column) throws OutOfBoundsException, SquareOccupiedException, AlreadyOverException
@@ -157,12 +160,12 @@ public class TicTacToe
 
 		movesLeft--;
 		map[index] = nextToMove;
+		winCheck(nextToMove, row, column, index);
 		if (movesLeft == 0) 
 		{
 			isOver = true;
 			return;
 		}
-		winCheck(nextToMove, row, column, index);
 		nextToMove = nextToMove == X ? O : X;
 	}
 
