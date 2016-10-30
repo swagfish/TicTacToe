@@ -11,7 +11,7 @@ public class TestTicTacToe extends SeleniumTestWrapper
   public void titleMatches()
   {
     driver.get(baseUrl);
-    assertEquals("SWAGFISH - TicTacToe", driver.getTitle());
+    assertEquals("SWAGFISH - TicTacTo", driver.getTitle());
   }
   @Test
   public void findElements()
