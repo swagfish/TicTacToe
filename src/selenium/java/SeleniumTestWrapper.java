@@ -27,8 +27,8 @@ public abstract class SeleniumTestWrapper
       "phantomjs"
     );*/
     //driver = new PhantomJSDriver(caps);
-    //driver = new PhantomJSDriver();
-    driver = new ChromeDriver();
+    driver = new PhantomJSDriver();
+    //driver = new ChromeDriver();
 
 
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
