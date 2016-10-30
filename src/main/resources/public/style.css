@@ -1,4 +1,6 @@
-
+body {
+	background-image: url("backgr.jpg");
+}
 .btn-primary {
 	height: 50px !important;
 	width: 50px !important;
