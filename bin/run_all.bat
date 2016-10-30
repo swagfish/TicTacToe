@@ -1,0 +1,9 @@
+call bin\clean.bat
+call bin\javadoc.bat
+call bin\compile.bat
+call bin\check_code.bat
+call bin\unit_test.bat
+call bin\unit_test2.bat
+call bin\package.bat
+call bin\deploy.bat
+call build\install\tictactoe\bin\tictactoe.bat
