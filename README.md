@@ -2,8 +2,8 @@
 
 ![alt tag](https://swagfish.github.io/TicTacToe/images/gameplay.gif)
 
-Master:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/TicTacToe)
-Develop:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
+Master: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/TicTacToe)
+Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
 
 ![Heroku](https://heroku-badge.herokuapp.com/?app=arcane-tundra-47758)
 [![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=develop)
@@ -13,6 +13,9 @@ Develop:[![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=dev
 
 # Project website
 [Visit our website](https://swagfish.github.io/TicTacToe/)
+
+# Documentation
+[JavaDoc](https://swagfish.github.io/TicTacToe/javadoc/index.html)
 
 # Project structure
 ```
@@ -64,3 +67,7 @@ root
 |─ .gitignore
 └─ .travis.yml
 ```
+
+# Install
+
+# Run
