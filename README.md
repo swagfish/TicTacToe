@@ -20,7 +20,7 @@ Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=de
 
 <a name="play" />
 ## Play
-[Swagfish represents TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
+[Our game's continuous delivery](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
 
 <a name="web" />
 ## Project website
