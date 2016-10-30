@@ -2,16 +2,11 @@
 
 ![alt tag](https://swagfish.github.io/TicTacToe/images/gameplay.gif)
 
-Table of contents
-=================
-* [Tests](#Tests)
-* [Play](#Play)
-* [Project website](#Project website)
-* [Documentation](#Documentation)
-* [Project structure](#Project structure)
-* [Install](#Install)
-* [Run](#Run)
+##### Table of Contents  
+[Tests](#tests)
+[Play](#play)
 
+<a name="tests" />
 ## Tests
 Master: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/TicTacToe)
 Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
@@ -19,6 +14,7 @@ Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=de
 ![Heroku](https://heroku-badge.herokuapp.com/?app=arcane-tundra-47758)
 [![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=develop)
 
+<a name="play" />
 ## Play
 [Swagfish represents TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
 
@@ -79,6 +75,20 @@ root
 └─ .travis.yml
 ```
 
-## Install
-
-## Run
+## Setup
+### Download
+```bash
+$ git clone https://github.com/swagfish/tictactoe.git
+```
+### Compile
+```bash
+$ ./bin/compile
+```
+### Run
+```bash
+$ ./bin/deploy
+```
+### Clean, compile and run with all tests
+```bash
+$ ./bin/run_all
+```
