@@ -2,22 +2,33 @@
 
 ![alt tag](https://swagfish.github.io/TicTacToe/images/gameplay.gif)
 
+Table of contents
+=================
+* [Tests](#Tests)
+* [Play](#Play)
+* [Project website](#Project website)
+* [Documentation](#Documentation)
+* [Project structure](#Project structure)
+* [Install](#Install)
+* [Run](#Run)
+
+## Tests
 Master: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=master)](https://travis-ci.org/swagfish/TicTacToe)
 Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
 
 ![Heroku](https://heroku-badge.herokuapp.com/?app=arcane-tundra-47758)
 [![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=develop)
 
-# Play
+## Play
 [Swagfish represents TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
 
-# Project website
+## Project website
 [Visit our website](https://swagfish.github.io/TicTacToe/)
 
-# Documentation
+## Documentation
 [JavaDoc](https://swagfish.github.io/TicTacToe/javadoc/index.html)
 
-# Project structure
+## Project structure
 ```
 root
 |─ bin
@@ -68,6 +79,6 @@ root
 └─ .travis.yml
 ```
 
-# Install
+## Install
 
-# Run
+## Run
