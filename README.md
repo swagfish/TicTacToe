@@ -35,13 +35,8 @@ Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=de
 ```
 root
 |─ bin
-|  |─ check_code.sh
-|  |─ clean.sh
-|  |─ compile.sh
-|  |─ deploy.sh
-|  |─ package.sh
-|  |─ run_all.sh
-|  └─ unit_test.sh
+|─ gradle
+|─ docs
 |─ gradle
 |─ src
 |  |─ main
@@ -60,7 +55,14 @@ root
 |  |  |              └─ SquareOccupiedException.java
 |  |  └─ resources
 |  |     └─ public
-|  |        └─ index.html
+|  |        |─ backgr.jpg
+|  |        |─ index.html
+|  |        |─ style.css
+|  |        └─ ttt.js
+|  |─ selenium
+|  |  └─ java
+|  |     |─ SeleniumTestWrapper.java
+|  |     └─ TestTicTacToe.java
 |  └─ test
 |     └─ java
 |        └─ com
@@ -69,17 +71,16 @@ root
 |              |  └─ WebServerTest.java
 |              └─ tictactoe
 |                 └─ TicTacToeTest.java
+|─ .gitignore
+|─ .travis.yml
 |─ build.gradle
 |─ gradlew
 |─ gradlew.bat
-|─ LICENSE.md
+|─ phantomjsdriver.log
 |─ Procfile
 |─ README.md
 |─ settings.gradle
-|─ system.properties
-|─ .git
-|─ .gitignore
-└─ .travis.yml
+└─ system.properties
 ```
 
 <a name="setup" />
