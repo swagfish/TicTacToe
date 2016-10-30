@@ -45,11 +45,36 @@ public class TestTicTacToe extends SeleniumTestWrapper
     driver.findElement(By.name("button9")).isDisplayed();
     driver.findElement(By.name("ng")).isDisplayed();
   }
+
+  @Test
+  public void correctValues()
+  {
+
+    driver.findElement(By.name("ng")).click();
+    driver.findElement(By.name("button1")).click();
+    String val = driver.findElement(By.name("button1")).getAttribute("value");
+    assertEquals("X", val);
+    driver.findElement(By.name("button2")).click();
+    val = driver.findElement(By.name("button2")).getAttribute("value");
+    assertEquals("O", val);
+    driver.findElement(By.name("button4")).click();
+    val = driver.findElement(By.name("button4")).getAttribute("value");
+    assertEquals("X", val);
+    driver.findElement(By.name("button5")).click();
+    val = driver.findElement(By.name("button5")).getAttribute("value");
+    assertEquals("O", val);
+    driver.findElement(By.name("button7")).click();
+    val = driver.findElement(By.name("button7")).getAttribute("value");
+    assertEquals("X", val);
+
+  }
+
   @Test
   public void clickTest()
   {
     driver.get(baseUrl);
 
+    driver.findElement(By.name("ng")).click();
     driver.findElement(By.name("button1")).click();
     driver.findElement(By.name("button2")).click();
     driver.findElement(By.name("button3")).click();
@@ -61,4 +86,37 @@ public class TestTicTacToe extends SeleniumTestWrapper
     driver.findElement(By.name("button9")).click();
     driver.findElement(By.name("ng")).click();
   }
+
+  /*
+  @Test
+  public void winTest()
+  {
+    driver.findElement(By.name("ng")).click();
+    driver.findElement(By.name("button1")).click();
+    driver.findElement(By.name("button2")).click();
+    driver.findElement(By.name("button4")).click();
+    driver.findElement(By.name("button5")).click();
+    driver.findElement(By.name("button7")).click();
+    String att = driver.findElement(By.name("winner")).getAttribute("value");
+    assertEquals("X wins", att);
+    driver.findElement(By.name("ng")).click();
+
+  }
+
+  @Test
+  public void winTest2()
+  {
+    driver.findElement(By.name("ng")).click();
+    driver.findElement(By.name("button1")).click();
+    driver.findElement(By.name("button2")).click();
+    driver.findElement(By.name("button4")).click();
+    driver.findElement(By.name("button5")).click();
+    driver.findElement(By.name("button3")).click();
+    driver.findElement(By.name("button8")).click();
+    String att = driver.findElement(By.name("winner")).getAttribute("value");
+    assertEquals("O wins", att);
+    driver.findElement(By.name("ng")).click();
+
+  }
+  */
 }

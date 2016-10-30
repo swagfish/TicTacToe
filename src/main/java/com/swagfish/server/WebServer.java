@@ -145,7 +145,7 @@ public class WebServer implements SparkApplication
 		}
 		catch (NoWinnerException ex)
 		{
-			return "";
+			return ttt.isOver() ? "draw" : "";
 		}
 	}
 }
