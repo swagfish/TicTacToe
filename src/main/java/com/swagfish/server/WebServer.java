@@ -6,11 +6,24 @@ import spark.servlet.SparkApplication;
 import com.swagfish.tictactoe.TicTacToe;
 import com.swagfish.tictactoe.exceptions.*;
 
-
+/**
+ * <h1>TicTacToe Web Server</h1>
+ * The web server that handles the client requests.
+ * It updates the game and keeps track of the current state.
+ * 
+ * @author teamSwagFish
+ * @version 1.0
+ * @since 2016-10-20
+ * @serial SWAG-FISH-INC
+ */
 public class WebServer implements SparkApplication
 {
 	private TicTacToe ttt;
 
+	/**
+	 * The main function. Connects the java application to the server
+	 * @param args Unused input string
+	 */
 	public static void main(String[] args)
 	{
 		// path of html files
@@ -27,6 +40,11 @@ public class WebServer implements SparkApplication
 		web.init();
 	}
 
+	/**
+	 * Initializes the game.
+	 * Creates a new map to be played and listens 
+	 * to when the new game button is pushed.
+	 */
 	@Override
 	public void init()
 	{
@@ -80,7 +98,11 @@ public class WebServer implements SparkApplication
 		});
 	}
 
-	// error handler for handlerequesthelper which calls add() in ttt
+	/**
+	 * Handles requests from the client
+	 * @param index The index of square
+	 * @return char The player
+	 */
 	private char handleRequest(int index)
 	{
 		try
@@ -93,7 +115,13 @@ public class WebServer implements SparkApplication
 		}
 	}
 
-	// returns the char (' ' if none) that should occupy the square
+	/**
+	 * Helper function for the handleRequest function
+	 * returns the char (' ' if none) that should occupy the square
+	 * @param index The index of square
+	 * @throws OutOfBoundsException The move is illegal
+	 * @return char The player
+	 */
 	private char handleRequestHelper(int index) throws OutOfBoundsException
 	{
 		try
@@ -105,7 +133,10 @@ public class WebServer implements SparkApplication
 		return ttt.getSquare(index);
 	}
 
-	// Returns results, if any (empty string on none finished games)
+	/**
+	 * Returns results, if any (empty string on none finished games)
+	 * @return String The winner
+	 */
 	private String displayWinner()
 	{
 		try 
