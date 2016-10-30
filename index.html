@@ -4,19 +4,17 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="indexx.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="ind.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"> -->
 
     <title>TicTacToe by swagfish</title>
   </head>
 
   <body>
-
     <header>
       <div class="container">
         <h1>TicTacToe</h1>
-        <h2>#videogameBANGER #wowsoFancy #developerGODS</h2>
 
         <section id="downloads">
           <a href="https://github.com/swagfish/TicTacToe/zipball/master" class="btn">Download as .zip</a>
@@ -31,32 +29,37 @@
         <h2>
 <a id="the-project" class="anchor" href="#the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Project</h2>
 
-<p>The team of Swagfish are developing a huge video game (the next big thing) in the most fashionable way there is! How do they do it? Read on and find out..</p>
+<p>We, team Swagfish, are developing a web application game called TicTacToe however the main focus on this project
+is not the programming behind it, but the development behind it and to learn how to set up technical infrastructures
+that supports agile development.</p>
 
 <h2>
-<a id="automatic-builds" class="anchor" href="#automatic-builds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Automatic builds?</h2>
+<a id="always-running" class="anchor" href="#always-running" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The game</h2>
 
-<p>You know, laziness makes a good programmer. The system is set up with a script that builds the whole project.</p>
-
-<h2>
-<a id="they-just-love-testing" class="anchor" href="#they-just-love-testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>They just love testing!</h2>
-
-<p>When the build script is run, all sorts of tests follow ("is the grid correct?", "is the player allowed to do that?"). Lovely stuff!</p>
+<p>The game itself is a simple TicTacToe. It's a two player game, X and O, and the main focus is to place three marks in a row. The newest version of the game is always available. Just head out to <a href="https://arcane-tundra-47758.herokuapp.com/">TicTacToe</a> and check it out.
 
 <h2>
-<a id="always-running" class="anchor" href="#always-running" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Always running</h2>
+<a id="automatic-builds" class="anchor" href="#automatic-builds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle</h2>
 
-<p>The newest version of the game is always available. Just head out to <a href="http://www.example.com">www.example.com</a> and check it out. Their automatic build never fails to amaze.</p>
-
-<h2>
-<a id="the-coolest-strategy" class="anchor" href="#the-coolest-strategy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The coolest strategy</h2>
-
-<p>It's modern, it's agile and it's fun. The Test Driven Development is the process that the Swagfish dedicate their work to. When there's a new feature, it will be managed on a new feature branch and everything is protected. (The code is loosely coupled and follows good object oriented design practices)</p>
+<p> The project is also run with an open source build automation system called gradle. With gradle you can easily run scripts that allows you for example, compile your code
+create a runnable Jar file or even run unit tests. It can be a little bit hard to set up gradle and getting used to it, but once that part is over it makes things much easier.</p>
 
 <h2>
-<a id="continuously-awesome" class="anchor" href="#continuously-awesome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Continuously awesome</h2>
+<a id="continuously-awesome" class="anchor" href="#continuously-awesome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Travis CI</h2>
+<p>The project also uses <a href="https://travis-ci.org/swagfish/TicTacToe/">Travis CI</a>, which is a continuous integration service used to build and test projects at GitHub. Travis
+automatically detects when a commit has been made and pushed to a GitHub repository that is using Travis. Each time that happens, it builds the project and runs all tests.</p>
 
-<p>If you weren't impressed yet, this is the part where you get blown away. <a href="https://travis-ci.org/swagfish/tictactoe/">Travis</a> makes sure all code is integrated into a shared repository and everything is kept track of.</p>
+<h2>
+<a id="continuously-awesome" class="anchor" href="#continuously-awesome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Heroku</h2>
+<p>The project also uses a cloud platform called <a href="https://www.heroku.com/">Heroku</a>. Heroku allows us to build, delived
+and monitor our project and to run in on the web so everyone can enjoy it.</p>
+
+
+<h2>
+<a id="the-coolest-strategy" class="anchor" href="#the-coolest-strategy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test Driven Development</h2>
+
+<p>The Test Driven Development is the process that the Swagfish dedicate their work to. When there's a new feature, it will be managed on a new feature branch and everything is protected. Whenever we finish a new feature, we push it to a developer branch,
+and from there, only one person has the right to push it to the master branch. (The code is loosely coupled and follows good object oriented design practices)</p>
       </section>
     </div>
 
