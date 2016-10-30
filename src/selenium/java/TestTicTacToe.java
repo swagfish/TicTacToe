@@ -61,9 +61,4 @@ public class TestTicTacToe extends SeleniumTestWrapper
     driver.findElement(By.name("button9")).click();
     driver.findElement(By.name("ng")).click();
   }
-
-
-
-
-
 }

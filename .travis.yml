@@ -4,7 +4,9 @@ jdk:
   - oraclejdk8
 
 notifications:
-  slack: teamswagfish:c3pl7bqeM6RAUxsOaIguND1f 
+  slack: teamswagfish:c3pl7bqeM6RAUxsOaIguND1f
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+script: ./bin/run_selenium

@@ -33,11 +33,9 @@ public class WebServer implements SparkApplication
 		SparkApplication web  = new WebServer();
 
 		// set poort
-		/*
 		String port = System.getenv("PORT");
 		if (port != null) port(Integer.valueOf(port));
-		*/
-		port(9982);
+
 		// setup server listeners
 		web.init();
 	}
