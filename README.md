@@ -3,8 +3,12 @@
 ![alt tag](https://swagfish.github.io/TicTacToe/images/gameplay.gif)
 
 ##### Table of Contents  
-[Tests](#tests)
-[Play](#play)
+* [Tests](#tests)
+* [Play](#play)
+* [Website](#web)
+* [Documentation](#doc)
+* [Project structure](#structure)
+* [Setup](#setup)
 
 <a name="tests" />
 ## Tests
@@ -18,12 +22,15 @@ Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=de
 ## Play
 [Swagfish represents TicTacToe](https://arcane-tundra-47758.herokuapp.com/ "TicTacToe")
 
+<a name="web" />
 ## Project website
 [Visit our website](https://swagfish.github.io/TicTacToe/)
 
+<a name="doc" />
 ## Documentation
 [JavaDoc](https://swagfish.github.io/TicTacToe/javadoc/index.html)
 
+<a name="structure" />
 ## Project structure
 ```
 root
@@ -75,19 +82,24 @@ root
 └─ .travis.yml
 ```
 
+<a name="setup" />
 ## Setup
+<a name="dl" />
 ### Download
 ```bash
 $ git clone https://github.com/swagfish/tictactoe.git
 ```
+<a name="cmp" />
 ### Compile
 ```bash
 $ ./bin/compile
 ```
+<a name="run" />
 ### Run
 ```bash
 $ ./bin/deploy
 ```
+<a name="all" />
 ### Clean, compile and run with all tests
 ```bash
 $ ./bin/run_all
