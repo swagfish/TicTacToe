@@ -84,23 +84,16 @@ root
 
 <a name="setup" />
 ## Setup
-<a name="dl" />
+The following scripts will compile, run tests and deploy the program. To play it, open localhost:4567 in a browser.
 ### Download
 ```bash
 $ git clone https://github.com/swagfish/tictactoe.git
 ```
-<a name="cmp" />
-### Compile
-```bash
-$ ./bin/compile
-```
-<a name="run" />
-### Run
-```bash
-$ ./bin/deploy
-```
-<a name="all" />
-### Clean, compile and run with all tests
+### Unix
 ```bash
 $ ./bin/run_all
+```
+### Windows
+```bat
+$ bin\run_all.bat
 ```
