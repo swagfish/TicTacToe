@@ -10,7 +10,7 @@ import com.swagfish.tictactoe.exceptions.*;
  * <h1>TicTacToe Web Server</h1>
  * The web server that handles the client requests.
  * It updates the game and keeps track of the current state.
- * 
+ *
  * @author teamSwagFish
  * @version 1.0
  * @since 2016-10-20
@@ -33,16 +33,18 @@ public class WebServer implements SparkApplication
 		SparkApplication web  = new WebServer();
 
 		// set poort
+		/*
 		String port = System.getenv("PORT");
 		if (port != null) port(Integer.valueOf(port));
-
+		*/
+		port(9982);
 		// setup server listeners
 		web.init();
 	}
 
 	/**
 	 * Initializes the game.
-	 * Creates a new map to be played and listens 
+	 * Creates a new map to be played and listens
 	 * to when the new game button is pushed.
 	 */
 	@Override
@@ -62,7 +64,7 @@ public class WebServer implements SparkApplication
 				ttt = new TicTacToe();
 				res.status(200);
 			}
-			catch(InvalidTicTacToeSizeException ex) 
+			catch(InvalidTicTacToeSizeException ex)
 			{
 				res.status(400);
 			}
@@ -90,8 +92,8 @@ public class WebServer implements SparkApplication
 				ttt = new TicTacToe();
 				res.status(200);
 			}
-			catch(InvalidTicTacToeSizeException ex) 
-			{ 
+			catch(InvalidTicTacToeSizeException ex)
+			{
 				res.status(400);
 			}
 			return "";
@@ -139,7 +141,7 @@ public class WebServer implements SparkApplication
 	 */
 	private String displayWinner()
 	{
-		try 
+		try
 		{
 			return ttt.getWinner() == 1 ? "X wins" : "O wins";
 		}

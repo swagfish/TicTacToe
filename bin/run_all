@@ -6,4 +6,5 @@
 ./bin/check_code
 ./bin/unit_test
 ./bin/package
+./gradlew selenium
 ./bin/deploy
