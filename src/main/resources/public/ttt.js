@@ -1,69 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>
-	SWAGFISH - TicTacToe
-</title>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css" type="text/css">
-
-</head>
-<body>
-
-<div class="container">
-	<div class="jumbotron">
-		<h1>Swagfish - TicTacToe</h1>
-		<h2>A project in software engineering at Reykjavík University</h2>
-	</div>
-</div>
-
-
-<div class="game-container">
-<table class="container fix">
-<TR id="row1">
-	<td>
-		<input class="btn btn-primary btn-block" id="btn1" type="submit" name="button1" value="">
-	</td>
-	<td>
-		<input class="btn btn-primary btn-block" id="btn2" type="submit" name="button2" value="">
-	</td>
-	<td>
-		<input class="btn btn-primary btn-block" id="btn3" type="submit" name="button3" value="">
-	</td>
-<TR id="row2">
-	<td>
-		<input class="btn btn-primary btn-block" id="btn4" type="submit" name="button4" value="">
-	</td>
-	<td>
-		<input class="btn btn-primary btn-block" id="btn5" type="submit" name="button5" value="">
-	</td>
-	<td>
-		<input class="btn btn-primary btn-block" id="btn6" type="submit" name="button6" value="">
-	</td>
-<TR id="row3">
-	<td>
-		<input class="btn btn-primary btn-block" id="btn7" type="submit" name="button7" value="">
-	</td>
-	<td>
-		<input class="btn btn-primary btn-block" id="btn8" type="submit" name="button8" value="">
-	</td>
-	<td>
-		<input class="btn btn-primary btn-block" id="btn9" type="submit" name="button9" value="">
-	</td>
-</TABLE>
-<div class="new-game">
-<input class="btn btn-success" id="newgame" type="submit" name="ng" value="New Game">
-</div>
-</div>
-<div class="windiv">
-<input id="winner" readonly="true">
-</div>
-
-
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="ttt.js"></script>
-<script>
 
 $( document ).ready(
 	function()
@@ -201,9 +135,3 @@ $( document ).ready(
 		}
 	}
 );
-
-</script>
-
-
-</body>
-</html>
