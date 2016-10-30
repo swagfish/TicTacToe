@@ -19,11 +19,16 @@ public abstract class SeleniumTestWrapper
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+    /* For local testing
     System.getenv("PORT");
         if (port == null) {
             port = "4567";
         }
     baseUrl = "http://localhost:" + port;
+    */
+
+    // Testing the deployed version
+    baseUrl = "https://arcane-tundra-47758.herokuapp.com/";
   }
 
   @AfterClass
