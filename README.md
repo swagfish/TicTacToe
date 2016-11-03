@@ -16,7 +16,7 @@ Master: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=mas
 Develop: [![Build Status](https://travis-ci.org/swagfish/TicTacToe.svg?branch=develop)](https://travis-ci.org/swagfish/TicTacToe)
 
 ![Heroku](https://heroku-badge.herokuapp.com/?app=arcane-tundra-47758)
-[![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=develop)
+[![Code Coverage](https://img.shields.io/codecov/c/gh/swagfish/TicTacToe/develop.svg)](https://codecov.io/gh/swagfish/TicTacToe?branch=develop)
 
 <a name="play" />
 ## Play
