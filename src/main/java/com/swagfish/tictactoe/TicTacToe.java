@@ -186,7 +186,7 @@ public class TicTacToe
 	 */
 	private int getColumn(int index)
 	{
-		return index % size;
+		return index % size + 1;
 	}
 	
 	/**
